@@ -26,26 +26,8 @@ namespace Server_directory
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Sort();
-            //int[] rowHandles = gridView1.GetSelectedRows();
             db.Servers.Load();
             gridControl1.DataSource = db.Servers.Local.ToBindingList();
-        }
-        private void Sort()
-        {
-            //db.Servers.Load();
-            //if(textBox1.Text != "")
-            //{
-            //    var command = from table in db.Servers.Local.ToBindingList()
-            //                  where table.Sity == textBox1.Text
-            //                  orderby table.Id descending
-            //                  select table;
-            //    gridControl1.DataSource = command;
-            //}
-            //else
-            //{
-            //    gridControl1.DataSource = db.Servers.Local.ToBindingList();
-            //}
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//Новый
@@ -97,6 +79,7 @@ namespace Server_directory
 
             db.Servers.Remove(item);
             db.SaveChanges();
+            MessageBox.Show("Данные успешно удалены!");
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

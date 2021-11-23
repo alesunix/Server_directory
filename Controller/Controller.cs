@@ -15,11 +15,18 @@ namespace Server_directory.Controller
         IModel _model;
         public Controller()
         {
+            _view = new Form1() { Controller = this };
+            _model = new ModelDirectory();
         }
 
+        public static IController Instance()
+        {
+            return new Controller();
+        }
         public Form CreateForm()
         {
-            return new Form1() { Controller = this };
+            this.Refresh();
+            return (Form)_view;
         }
 
         public void CreateNew()
@@ -35,13 +42,6 @@ namespace Server_directory.Controller
         {
             throw new NotImplementedException();
         }
-
-        public static IController Instance()
-        {
-            IController controller = new Controller();
-            return controller;
-        }
-
         public void Update()
         {
             throw new NotImplementedException();

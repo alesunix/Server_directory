@@ -51,13 +51,11 @@ namespace Server_directory
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//Редактировать
-        {           
+        {
             int rowHandle = gridView1.FocusedRowHandle;//получение индекса выделенной строки
             int number = (int)gridView1.GetRowCellValue(rowHandle, "Id");
 
-            var item = db.Servers
-        .Where(c => c.Id == number)
-        .FirstOrDefault();
+            var item = db.Servers.Where(c => c.Id == number).FirstOrDefault();
 
             // Внести изменения
             item.Sity = textBox1.Text;
@@ -74,9 +72,7 @@ namespace Server_directory
             int rowHandle = gridView1.FocusedRowHandle;//получение индекса выделенной строки
             int number = (int)gridView1.GetRowCellValue(rowHandle, "Id");
 
-            var item = db.Servers
-                .Where(o => o.Id == number)
-                .FirstOrDefault();
+            var item = db.Servers.Where(o => o.Id == number).FirstOrDefault();
 
             db.Servers.Remove(item);
             db.SaveChanges();

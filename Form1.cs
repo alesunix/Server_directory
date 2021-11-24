@@ -16,10 +16,12 @@ namespace Server_directory
     public partial class Form1 : Form
     {
         ServerContext db;
+        Server server;
         public Form1()
         {
             InitializeComponent();
             db = new ServerContext();
+            server = new Server();
 
             //Сетка автоматически создает GridView, который представляет базовые данные в виде двухмерной таблицы.
             GridView gridView1 = gridControl1.MainView as GridView;
@@ -29,7 +31,11 @@ namespace Server_directory
             db.Servers.Load();
             gridControl1.DataSource = db.Servers.Local.ToBindingList();
         }
-
+        public void GetIndex()//перехват Id выбраной строки
+        {
+            int rowHandle = gridView1.FocusedRowHandle;//получение индекса выделенной строки
+            server.Id = (int)gridView1.GetRowCellValue(rowHandle, "Id");
+        }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//Добавить
         {
             if (textBox1.Text != "" & textBox2.Text != "" & textBox3.Text != "")
@@ -52,11 +58,8 @@ namespace Server_directory
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//Редактировать
         {
-            int rowHandle = gridView1.FocusedRowHandle;//получение индекса выделенной строки
-            int number = (int)gridView1.GetRowCellValue(rowHandle, "Id");
-
-            var item = db.Servers.Where(c => c.Id == number).FirstOrDefault();
-
+            GetIndex();
+            var item = db.Servers.Where(c => c.Id == server.Id).FirstOrDefault();
             // Внести изменения
             item.Sity = textBox1.Text;
             item.Ip = textBox2.Text;
@@ -69,10 +72,8 @@ namespace Server_directory
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//Удалить
         {
-            int rowHandle = gridView1.FocusedRowHandle;//получение индекса выделенной строки
-            int number = (int)gridView1.GetRowCellValue(rowHandle, "Id");
-
-            var item = db.Servers.Where(o => o.Id == number).FirstOrDefault();
+            GetIndex();
+            var item = db.Servers.Where(c => c.Id == server.Id).FirstOrDefault();
 
             db.Servers.Remove(item);
             db.SaveChanges();

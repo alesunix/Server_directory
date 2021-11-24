@@ -19,10 +19,10 @@ namespace Server_directory
         [DisplayName("Email")]
         public string Email { get; set; }
 
-        //Конструктор с двумя аргументами
-        public Server(int id)
-        {
-            Id = id;
-        }
+        ////Конструктор 
+        //public Server(int id)
+        //{
+        //    Id = id;
+        //}
     }
 }

@@ -12,13 +12,14 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using Server_directory.Views;
 using Server_directory.Controller;
+using Server_directory.Models;
 
 namespace Server_directory
 {
     public partial class Form1 : Form, IView
     {
         ServerContext db;
-
+        Server server;
         public IController Controller { get; set; }
 
         public void Refresh(BindingList<Server> data)
@@ -29,7 +30,9 @@ namespace Server_directory
         public Form1()
         {
             InitializeComponent();
-            
+
+            db = new ServerContext();
+            server = new Server();
 
             //Сетка автоматически создает GridView, который представляет базовые данные в виде двухмерной таблицы.
             GridView gridView1 = gridControl1.MainView as GridView;
@@ -56,7 +59,7 @@ namespace Server_directory
                 MessageBox.Show("Данные добавлены!");
                 textBox1.Clear();
                 textBox2.Clear();
-                textBox3.Clear();
+                textBox3.Clear();            
                 db.Servers.Load();
                 gridControl1.DataSource = db.Servers.Local.ToBindingList();
             }
@@ -73,6 +76,7 @@ namespace Server_directory
             item.Email = textBox3.Text;
             // Сохранить изменения
             db.SaveChanges();
+            db.Servers.Load();
             gridControl1.DataSource = db.Servers.Local.ToBindingList();
             MessageBox.Show("Данные успешно изменены!");
         }
@@ -84,6 +88,7 @@ namespace Server_directory
 
             db.Servers.Remove(item);
             db.SaveChanges();
+            db.Servers.Load();
             gridControl1.DataSource = db.Servers.Local.ToBindingList();
             MessageBox.Show("Данные успешно удалены!");
         }

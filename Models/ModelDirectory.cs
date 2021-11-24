@@ -10,7 +10,7 @@ namespace Server_directory.Models
 {
     internal class ModelDirectory: IModel
     {
-        ServerContext db=new ServerContext();
+        ServerContext db = new ServerContext();
 
 
         public BindingList<Server> GetData()

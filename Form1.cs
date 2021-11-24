@@ -83,7 +83,6 @@ namespace Server_directory
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            Server server = new Server();
             var grid = sender as GridView;
             if (grid.IsDataRow(e.FocusedRowHandle))
             {

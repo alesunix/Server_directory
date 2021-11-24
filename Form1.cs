@@ -30,7 +30,7 @@ namespace Server_directory
             gridControl1.DataSource = db.Servers.Local.ToBindingList();
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//Новый
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//Добавить
         {
             if (textBox1.Text != "" & textBox2.Text != "" & textBox3.Text != "")
             {
@@ -65,6 +65,7 @@ namespace Server_directory
             item.Email = textBox3.Text;
             // Сохранить изменения
             db.SaveChanges();
+            gridControl1.DataSource = db.Servers.Local.ToBindingList();
             MessageBox.Show("Данные успешно изменены!");
         }
 
@@ -79,6 +80,7 @@ namespace Server_directory
 
             db.Servers.Remove(item);
             db.SaveChanges();
+            gridControl1.DataSource = db.Servers.Local.ToBindingList();
             MessageBox.Show("Данные успешно удалены!");
         }
 

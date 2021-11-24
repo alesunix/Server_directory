@@ -13,10 +13,11 @@ using DevExpress.XtraGrid.Views.Grid;
 using Server_directory.Views;
 using Server_directory.Controller;
 using Server_directory.Models;
+using DevExpress.XtraEditors;
 
 namespace Server_directory
 {
-    public partial class Form1 : Form, IView
+    public partial class Form1 : XtraForm, IView
     {
         ServerContext db;
         Server server;
@@ -30,7 +31,8 @@ namespace Server_directory
         public Form1()
         {
             InitializeComponent();
-
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Black");
             db = new ServerContext();
             server = new Server();
 

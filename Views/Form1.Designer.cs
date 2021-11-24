@@ -73,10 +73,10 @@ namespace Server_directory
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 56);
+            this.gridControl1.Location = new System.Drawing.Point(12, 55);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(776, 338);
+            this.gridControl1.Size = new System.Drawing.Size(762, 327);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -169,31 +169,31 @@ namespace Server_directory
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(800, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(786, 29);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 430);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 423);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(800, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(786, 21);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 29);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 406);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 394);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(800, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(786, 29);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 406);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 394);
             // 
             // barEditItem1
             // 
@@ -216,33 +216,33 @@ namespace Server_directory
             this.layoutControl1.Controls.Add(this.textBox2);
             this.layoutControl1.Controls.Add(this.textBox1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 24);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 29);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(855, 169, 650, 400);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(800, 406);
+            this.layoutControl1.Size = new System.Drawing.Size(786, 394);
             this.layoutControl1.TabIndex = 19;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(458, 12);
+            this.textBox3.Location = new System.Drawing.Point(443, 12);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(135, 20);
+            this.textBox3.Size = new System.Drawing.Size(139, 20);
             this.textBox3.TabIndex = 3;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(263, 12);
+            this.textBox2.Location = new System.Drawing.Point(251, 12);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(135, 20);
+            this.textBox2.Size = new System.Drawing.Size(140, 20);
             this.textBox2.TabIndex = 5;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(68, 12);
+            this.textBox1.Location = new System.Drawing.Point(60, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 20);
+            this.textBox1.Size = new System.Drawing.Size(139, 20);
             this.textBox1.TabIndex = 4;
             // 
             // Root
@@ -257,7 +257,7 @@ namespace Server_directory
             this.emptySpaceItem1,
             this.emptySpaceItem2});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(800, 406);
+            this.Root.Size = new System.Drawing.Size(786, 394);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -265,34 +265,34 @@ namespace Server_directory
             this.layoutControlItem1.Control = this.textBox1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(195, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(191, 24);
             this.layoutControlItem1.Text = "Город";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(44, 13);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.textBox3;
-            this.layoutControlItem3.Location = new System.Drawing.Point(390, 0);
+            this.layoutControlItem3.Location = new System.Drawing.Point(383, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(195, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(191, 24);
             this.layoutControlItem3.Text = "Email";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(44, 13);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.textBox2;
-            this.layoutControlItem2.Location = new System.Drawing.Point(195, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(191, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(195, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(192, 24);
             this.layoutControlItem2.Text = "IP Адрес";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(44, 13);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.gridControl1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 44);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 43);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(780, 342);
+            this.layoutControlItem4.Size = new System.Drawing.Size(766, 331);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -301,27 +301,30 @@ namespace Server_directory
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 24);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(780, 20);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(766, 19);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(585, 0);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(574, 0);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(195, 24);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(192, 24);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(786, 444);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.IconOptions.Icon = ((System.Drawing.Icon)(resources.GetObject("Form1.IconOptions.Icon")));
+            this.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Справочник серверов";

@@ -18,11 +18,5 @@ namespace Server_directory
         public string Ip { get; set; }
         [DisplayName("Email")]
         public string Email { get; set; }
-
-        ////Конструктор 
-        //public Server(int id)
-        //{
-        //    Id = id;
-        //}
     }
 }

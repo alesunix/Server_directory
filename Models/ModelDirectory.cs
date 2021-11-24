@@ -12,7 +12,6 @@ namespace Server_directory.Models
     {
         ServerContext db = new ServerContext();
 
-
         public BindingList<Server> GetData()
         {
             db.Servers.Load();

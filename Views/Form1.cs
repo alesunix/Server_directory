@@ -10,26 +10,33 @@ using System.Windows.Forms;
 using System.Data.Entity;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
+using Server_directory.Views;
+using Server_directory.Controller;
 
 namespace Server_directory
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, IView
     {
         ServerContext db;
-        Server server;
+
+        public IController Controller { get; set; }
+
+        public void Refresh(BindingList<Server> data)
+        {
+            gridControl1.DataSource = data;
+        }
+
         public Form1()
         {
             InitializeComponent();
-            db = new ServerContext();
-            server = new Server();
+            
 
             //Сетка автоматически создает GridView, который представляет базовые данные в виде двухмерной таблицы.
             GridView gridView1 = gridControl1.MainView as GridView;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            db.Servers.Load();
-            gridControl1.DataSource = db.Servers.Local.ToBindingList();
+            Controller.Refresh();
         }
         public void GetIndex()//перехват Id выбраной строки
         {

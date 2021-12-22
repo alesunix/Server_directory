@@ -1,4 +1,4 @@
-﻿namespace Server_directory.Migrations
+﻿namespace Server_directory.Models
 {
     using System;
     using System.Data.Entity.Migrations;

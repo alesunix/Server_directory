@@ -12,8 +12,8 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using Server_directory.Views;
 using Server_directory.Controller;
-using Server_directory.Models;
 using DevExpress.XtraEditors;
+using Server_directory.Models;
 
 namespace Server_directory
 {
@@ -27,7 +27,10 @@ namespace Server_directory
         {
             gridControl1.DataSource = data;
         }
-
+        public void CreateNew(BindingList<Server> data)
+        {
+            gridControl1.DataSource = data;
+        }
         public Form1()
         {
             InitializeComponent();
@@ -52,18 +55,8 @@ namespace Server_directory
         {
             if (textBox1.Text != "" & textBox2.Text != "" & textBox3.Text != "")
             {
-                Server server = new Server();
-                server.Sity = textBox1.Text;
-                server.Ip = textBox2.Text;
-                server.Email = textBox3.Text;
-                db.Servers.Add(server);
-                db.SaveChanges();
+                Controller.CreateNew(textBox1, textBox2, textBox3);
                 MessageBox.Show("Данные добавлены!");
-                textBox1.Clear();
-                textBox2.Clear();
-                textBox3.Clear();            
-                db.Servers.Load();
-                gridControl1.DataSource = db.Servers.Local.ToBindingList();
             }
             else MessageBox.Show("Не все поля заполнены!");
         }
@@ -87,7 +80,6 @@ namespace Server_directory
         {
             GetIndex();
             var item = db.Servers.Where(c => c.Id == server.Id).FirstOrDefault();
-
             db.Servers.Remove(item);
             db.SaveChanges();
             db.Servers.Load();

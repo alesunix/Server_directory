@@ -1,10 +1,6 @@
 ﻿using Server_directory.Models;
 using Server_directory.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Server_directory.Controller
@@ -29,9 +25,9 @@ namespace Server_directory.Controller
             return (Form)_view;
         }
 
-        public void CreateNew()
+        public void CreateNew(TextBox textBox1, TextBox textBox2, TextBox textBox3)
         {
-            throw new NotImplementedException();
+            _view.CreateNew(_model.GetDataCreate(textBox1, textBox2, textBox3));
         }
 
         public void Refresh()

@@ -19,7 +19,6 @@ namespace Server_directory
 {
     public partial class Form1 : XtraForm, IView
     {
-        ServerContext db;
         public static Server server;
         public IController Controller { get; set; }       
         public Form1()
@@ -27,7 +26,6 @@ namespace Server_directory
             InitializeComponent();
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Black");
-            db = new ServerContext();
             server = new Server();
 
             //Сетка автоматически создает GridView, который представляет базовые данные в виде двухмерной таблицы.

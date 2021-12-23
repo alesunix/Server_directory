@@ -1,6 +1,5 @@
 ﻿using Server_directory.Models;
 using Server_directory.Views;
-using System;
 using System.Windows.Forms;
 
 namespace Server_directory.Controller
@@ -25,9 +24,9 @@ namespace Server_directory.Controller
             return (Form)_view;
         }
 
-        public void CreateNew(TextBox textBox1, TextBox textBox2, TextBox textBox3)
+        public void CreateNew()
         {
-            _view.CreateNew(_model.GetDataCreate(textBox1, textBox2, textBox3));
+            _view.CreateNew(_model.GetDataCreate());
         }
 
         public void Refresh()
@@ -36,11 +35,11 @@ namespace Server_directory.Controller
         }
         public void Delete()
         {
-            throw new NotImplementedException();
+            _view.Delete(_model.GetDataDelete());
         }
         public void Update()
         {
-            throw new NotImplementedException();
+            _view.Update(_model.GetDataUpdate());
         }
     }
 }

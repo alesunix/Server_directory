@@ -7,6 +7,8 @@ namespace Server_directory.Views
     {
         void Refresh(BindingList<Server> data);
         void CreateNew(BindingList<Server> data);
+        void Delete(BindingList<Server> data);
+        void Update(BindingList<Server> data);
         IController Controller { get; set; }
     }
 }

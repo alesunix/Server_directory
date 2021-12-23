@@ -20,17 +20,8 @@ namespace Server_directory
     public partial class Form1 : XtraForm, IView
     {
         ServerContext db;
-        Server server;
-        public IController Controller { get; set; }
-
-        public void Refresh(BindingList<Server> data)
-        {
-            gridControl1.DataSource = data;
-        }
-        public void CreateNew(BindingList<Server> data)
-        {
-            gridControl1.DataSource = data;
-        }
+        public static Server server;
+        public IController Controller { get; set; }       
         public Form1()
         {
             InitializeComponent();
@@ -55,7 +46,13 @@ namespace Server_directory
         {
             if (textBox1.Text != "" & textBox2.Text != "" & textBox3.Text != "")
             {
-                Controller.CreateNew(textBox1, textBox2, textBox3);
+                ModelDirectory.TbSity = textBox1.Text;
+                ModelDirectory.TbIp = textBox2.Text;
+                ModelDirectory.TbEmail = textBox3.Text;
+                Controller.CreateNew();
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
                 MessageBox.Show("Данные добавлены!");
             }
             else MessageBox.Show("Не все поля заполнены!");
@@ -63,27 +60,22 @@ namespace Server_directory
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//Редактировать
         {
-            GetIndex();
-            var item = db.Servers.Where(c => c.Id == server.Id).FirstOrDefault();
-            // Внести изменения
-            item.Sity = textBox1.Text;
-            item.Ip = textBox2.Text;
-            item.Email = textBox3.Text;
-            // Сохранить изменения
-            db.SaveChanges();
-            db.Servers.Load();
-            gridControl1.DataSource = db.Servers.Local.ToBindingList();
-            MessageBox.Show("Данные успешно изменены!");
+            if (textBox1.Text != "" & textBox2.Text != "" & textBox3.Text != "")
+            {
+                GetIndex();
+                ModelDirectory.TbSity = textBox1.Text;
+                ModelDirectory.TbIp = textBox2.Text;
+                ModelDirectory.TbEmail = textBox3.Text;
+                Controller.Update();
+                MessageBox.Show("Данные успешно изменены!");
+            }
+            else MessageBox.Show("Не все поля заполнены!");
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//Удалить
         {
             GetIndex();
-            var item = db.Servers.Where(c => c.Id == server.Id).FirstOrDefault();
-            db.Servers.Remove(item);
-            db.SaveChanges();
-            db.Servers.Load();
-            gridControl1.DataSource = db.Servers.Local.ToBindingList();
+            Controller.Delete();
             MessageBox.Show("Данные успешно удалены!");
         }
 
@@ -92,12 +84,29 @@ namespace Server_directory
             var grid = sender as GridView;
             if (grid.IsDataRow(e.FocusedRowHandle))
             {
-                var item = grid.GetFocusedRow() as Server;
+                Server item = grid.GetFocusedRow() as Server;
                 server.Id = item.Id;
                 textBox1.Text = item.Sity;
                 textBox2.Text = item.Ip;
                 textBox3.Text = item.Email;
             }
         }
+        public void Refresh(BindingList<Server> data)
+        {
+            gridControl1.DataSource = data;
+        }
+        public void CreateNew(BindingList<Server> data)
+        {
+            gridControl1.DataSource = data;
+        }
+        public void Delete(BindingList<Server> data)
+        {
+            gridControl1.DataSource = data;
+        }
+        public void Update(BindingList<Server> data)
+        {
+            gridControl1.DataSource = data;
+        }
+
     }
 }
